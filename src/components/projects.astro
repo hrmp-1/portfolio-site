@@ -1,0 +1,107 @@
+---
+import ProjectCard from "../components/projectCard.astro";
+
+const projects = [
+    { 
+        name: "Groopd", 
+        language: "swift", 
+        description: `
+            A real-time, shared grocery planner built natively for the Apple ecosystem to 
+            eliminate household purchasing conflicts. Leverages CoreData and CloudKit Zone Sharing 
+            for multi-user synchronization across devices, allowing families and roommates to manage a live, 
+            unified shopping list seamlessly.
+        `, 
+        url: "/projects/groopd",
+        iconurl: "/groopdicon.png",
+        wip: true
+    },
+    { 
+        name: "Notarik", 
+        language: "swift", 
+        description: `
+            A modern speed-reading document reader utilizing the RSVP (Rapid Serial Visual Presentation) technique. 
+            Features asynchronous background PDF processing powered by Swift Concurrency, integrated with CoreData and 
+            CloudKit for cloud sync, with planned AI-driven comprehension tools.
+        `,
+        url: "/projects/notarik",
+        iconurl: "/notarikicon.png",
+        wip: true
+    },
+    { 
+        name: "Portfolio Site", 
+        language: "astro", 
+        description: `
+            A fast, static portfolio built with Astro and Tailwind CSS. Designed with the goal of 
+            being a fast, low cost, and visually pleasing website.
+        `,
+        url: "/projects/portfoliosite",
+        iconurl: "/favicon.png",
+        wip: true
+    }
+]
+
+---
+<div class="flex flex-col h-1/2 p-5 overflow-hidden glass w-3/4">
+    <main class="grow flex flex-col gap-3 pt-3 min-h-0 overflow-hidden">
+        <div class="flex flex-row justify-between flex-wrap gap-3">
+            <div class="flex gap-3 flex-wrap">
+                <button data-filter="all" class="code-pill border-black hover:bg-black [&.active]:bg-black">all</button>
+                <button data-filter="swift" class="code-pill border-[#F05138] hover:bg-[#F05138] [&.active]:bg-[#F05138]">swift</button>
+                <button data-filter="python" class="code-pill border-[#3776AB] hover:bg-[#3776AB] [&.active]:bg-[#3776AB]">python</button>
+                <button data-filter="java" class="code-pill border-[#E61F25] hover:bg-[#E61F25] [&.active]:bg-[#E61F25]">java</button>
+                <button data-filter="astro" class="code-pill border-[#EE46DD] hover:bg-[#EE46DD] [&.active]:bg-[#EE46DD]">astro</button>
+            </div>
+            <div class="text-white w-full justify-center items-center text-center">v Scroll to see more v</div>
+        </div>
+        
+        <div class="grow p-3 rounded-2xl shadow-2xl flex flex-col gap-3 overflow-y-auto min-h-0">
+            {projects.map((project) => (
+                <div  data-language={project.language} class="project-card">
+                    <ProjectCard
+                        name={project.name}
+                        lang={project.language}
+                        desc={project.description}
+                        iconurl={project.iconurl}
+                        wip={project.wip}
+                    />
+                </div>
+            ))}
+        </div>
+    </main>
+</div>
+
+<script>
+    setupFilters();
+
+    document.addEventListener('astro:page-load', setupFilters);
+
+    function setupFilters() {
+
+        const buttons = document.querySelectorAll('.code-pill')
+        const projectCards = document.querySelectorAll('.project-card')
+
+        const allBtn = document.querySelector('[data-filter="all"]');
+        if (allBtn) allBtn.classList.add('active');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filterValue = button.getAttribute('data-filter');
+
+                // Update button styling
+                buttons.forEach(btn => btn.classList.remove('active'))
+                button.classList.add('active')
+
+                // Filter the cards
+                projectCards.forEach(card => {
+                    const cardLang = card.getAttribute('data-language');
+
+                    if (filterValue === 'all' || cardLang === filterValue) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden')
+                    }
+                })
+            })
+        })
+    }
+</script>

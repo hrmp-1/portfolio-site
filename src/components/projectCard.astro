@@ -1,0 +1,38 @@
+---
+const { name, desc, lang, iconurl, wip } = Astro.props;
+
+// Typing this explicitly as Record<string, string> fixes the index error
+const valueMap: Record<string, string> = {
+    "java":  "bg-[#E61F25] border-[#E61F25]",
+    "python": "bg-[#3776AB] border-[#3776AB]",
+    "swift": "bg-[#F05138] border-[#F05138]",
+    "astro": "bg-[#EE46DD] border-[#EE46DD]",
+}
+
+const color = valueMap[lang] || "bg-[#000000] border-[#000000]";
+
+---
+
+<div class="group relative flex w-full rounded-3xl shadow-sm p-3 gap-3 glass z-50">
+    <img class="rounded-2xl self-start shadow-lg relative z-10" src={iconurl} width="75" height="75">
+    <div class="relative z-10 flex flex-col gap-2">
+        <div class="flex gap-3 flex-row flex-wrap">
+            <div class="font-ubuntu font-bold text-white">
+                {name}
+            </div>
+            <div class={`font-ubuntu text-xs border-2 rounded-full p-0.5 pl-4 pr-4 text-white ${color} text-center w-fit`}>
+                {lang}
+            </div>
+            <div>
+                {wip && 
+                <div class={`font-ubuntu text-xs border-2 rounded-full p-0.5 pl-4 pr-4 text-white bg-amber-500 border-amber-500 w-fit`}>
+                    WIP
+                </div>}
+            </div>
+        </div>
+        <div>
+            <div class="font-ubuntu text-white text-sm">{desc}</div>
+        </div>
+        <div class="font-ubuntu text-white text-sm group-hover:text-blue-400 transition duration-200">[View Project Details &minus;&minus;&gt;]</div>
+    </div>
+</div>

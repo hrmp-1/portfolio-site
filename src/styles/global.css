@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+    --font-ubuntu: "Ubuntu Mono", sans-serif;
+}
+
+@utility code-pill {
+    @apply glass font-ubuntu text-xs border-2 rounded-full p-0.5 pl-4 pr-4 text-white transition duration-200 [&.active]:text-white;
+}
+
+@utility project-card {
+    @apply rounded-2xl;
+}
+
+@utility nav-pill {
+    @apply text-nowrap font-ubuntu text-white p-3 hover:text-blue-400 rounded-4xl transition duration-200 [&.active]:text-blue-400
+}
+
+@utility glow-effect {
+    @apply group-hover:opacity-100 opacity-0 bg-linear-to-r from-red-500 to-blue-600 rounded-full transition duration-200 blur-2xl
+}
+
+@utility glow-effect-2 {
+    @apply group-hover:opacity-100 opacity-0 bg-linear-to-r from-blue-300 to-blue-600 rounded-3xl transition duration-200 blur-3xl
+}
+
+@utility blink {
+    animation: blink-animation 1s steps(1, start) infinite;
+}
+
+@keyframes blink-animation {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@utility glass {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+@utility skill-box {
+    @apply flex flex-col glass h-70 w-70;
+}
+
+@utility skill-header {
+    @apply bg-gray-900 text-white rounded-t-3xl pl-3 pr-3 pt-3 pb-2;
+}
+
+@utility skill-pill-container {
+    @apply flex flex-row flex-wrap gap-3 p-4;
+}
+
+@utility skill-pill {
+    @apply glass font-ubuntu flex p-0.5 pl-5 pr-5 rounded-full text-white;
+}

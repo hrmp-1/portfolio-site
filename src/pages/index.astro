@@ -1,0 +1,289 @@
+---
+import "../styles/global.css";
+
+import Projects from "../components/projects.astro";
+
+---
+
+<html lang="en" class="scroll-smooth bg-linear-to-b to-blue-950 from-gray-800">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Hunter Mansson | Software Development Portfolio</title>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	</head>
+	<body class="bg-blue-950">
+		<nav class="fixed top-20 md:top-4 left-1/2 -translate-x-1/2 z-50 transition-[top] duration-200 ease-out">
+			<div class="flex rounded-4xl glass">
+				<a class="nav-pill" href="#about">about me</a>
+				<a class="nav-pill" href="#projects">projects</a>
+				<a class="nav-pill" href="#skills">skills</a>
+				<a class="nav-pill" href="#experience">experience</a>
+			</div>
+		</nav>
+		<div>
+			<section id="about" class="flex flex-col section w-full h-screen bg-linear-to-t to-blue-950 from-gray-800">
+				<div id="start" class="flex justify-between p-4 ">
+					<div class="p-3 font-ubuntu text-white text-xl flex flex-row text-nowrap">
+						<div>huntermansson %</div>
+						<div class="blink">&nbsp;_</div>
+					</div>
+					<div class="p-3 pr-5 pl-5 flex gap-5 justify-center items-center">
+						<a href="mailto:contact@huntermansson.com" class="text-white text-2xl transition hover:scale-120" aria-label="Opens Email">
+							<i class="fa fa-envelope"></i>
+						</a>
+						<a href="https://www.linkedin.com/in/hunter-mansson-517159320" class="text-white text-2xl transition hover:scale-120" aria-label="LinkedIn Profile">
+							<i class="fa-brands fa-linkedin"></i>
+						</a>
+						<a href="https://github.com/hrmp-1" class="text-white text-2xl transition hover:scale-120" aria-label="GitHub Profile">
+							<i class="fa-brands fa-github"></i>
+						</a>
+						<a href="https://www.instagram.com/huntermansson/" class="text-white text-2xl transition hover:scale-120" aria-label="Instagram Profile">
+							<i class="fa-brands fa-instagram"></i>
+						</a>
+					</div>
+				</div>
+				<div class="flex flex-col justify-center items-center font-ubuntu text-white grow ">
+					<div class="absolute hidden sm:flex flex-row text-white text-xl items-start w-3/4 pb-150 pointer-events-none">
+						<div>cd portfolio</div>
+						<div class="blink">_</div>
+					</div>
+					<div class="flex flex-col md:flex-row justify-between w-3/4">
+						<div class="flex flex-col gap-3 justify-center items-center text-center md:items-start md:text-left">
+							<div class="flex flex-col">
+								<div>Hi, my name is</div>
+								<div class="text-5xl">Hunter Mansson</div>
+							</div>
+							<div class="flex flex-row text-nowrap justify-center items-center md:gap-0 gap-3">
+								<div>Computer Science Student @</div>
+								<div class="hidden sm:flex">&nbsp;</div>
+								<img alt="North Carolina State University (NCSU) Logo" src="/ncstate_logo.png" class="max-w-full h-auto md:w-37.5 w-30">
+							</div>
+							<div class="w-full md:w-3/4 glass p-3">
+								I'm a student who loves untangling complex problems. For me, the best solutions are the simplest ones.
+								I value clarity and brevity while avoiding limitations and allowing room to grow. 
+							</div>
+							<div class="pt-3 flex gap-5 justify-center items-center">
+								<a href="/resume.pdf" class="flex h-8 px-3 items-center justify-center border border-white rounded-lg text-white text-sm font-ubuntu leading-none transition hover:scale-110">
+									resume
+								</a>
+								<a href="mailto:contact@huntermansson.com" class="text-white text-2xl transition hover:scale-120" aria-label="Opens Email">
+									<i class="fa fa-envelope"></i>
+								</a>
+								<a href="https://www.linkedin.com/in/hunter-mansson-517159320" class="text-white text-2xl transition hover:scale-120" aria-label="LinkedIn Profile">
+									<i class="fa-brands fa-linkedin"></i>
+								</a>
+								<a href="https://github.com/hrmp-1" class="text-white text-2xl transition hover:scale-120" aria-label="GitHub Profile">
+									<i class="fa-brands fa-github"></i>
+								</a>
+								<a href="https://www.instagram.com/huntermansson/" class="text-white text-2xl transition hover:scale-120" aria-label="Instagram Profile">
+									<i class="fa-brands fa-instagram"></i>
+								</a>
+							</div>
+						</div>
+						<div class="hidden md:flex relative group rounded-full border-8 glass justify-center items-center h-50 w-50">
+							<img class="absolute z-20 rounded-full" src="/hunter_final_square.png" height="200" width="200">
+							<div class="relative glow-effect w-50 h-50"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="projects" class="section relative w-full h-screen bg-gray-800 font-ubuntu flex flex-col justify-center items-center gap-3">
+				<div class="absolute top-20 sm:top-25 w-3/4 flex flex-row text-white text-xl pointer-events-none">
+					<div>ls projects</div>
+					<div class="blink">_</div>
+				</div>
+				<Projects></Projects>
+				<div class="text-white text-wrap flex flex-wrap">Constantly creating, Constantly updating</div>
+			</section>
+			<section id="skills" class="section relative w-full min-h-screen bg-gray-800 font-ubuntu flex justify-center items-center py-24">
+				<div class="absolute top-15 sm:top-25 w-3/4 flex flex-row text-white text-xl pointer-events-none">
+					<div>cat skills</div>
+					<div class="blink">_</div>
+				</div>
+				<div class="flex flex-wrap flex-row w-3/4 h-1/2 gap-3 justify-center items-center">
+					<div class="text-white skill-box">
+						<div class="text-white skill-header">Languages</div>
+						<div class="text-white skill-pill-container">
+							<div class="text-white skill-pill">Java</div>
+							<div class="text-white skill-pill">Swift</div>
+							<div class="text-white skill-pill">Python</div>
+							<div class="text-white skill-pill">HTML/CSS</div>
+							<div class="text-white skill-pill">Lua</div>
+							<div class="text-white skill-pill">C</div>
+						</div>
+					</div>
+					<div class="text-white skill-box">
+						<div class="text-white skill-header">Frameworks & Libraries</div>
+						<div class="text-white skill-pill-container">
+							<div class="text-white skill-pill">RESTful APIs</div>
+							<div class="text-white skill-pill">SwiftUI</div>
+							<div class="text-white skill-pill">SwiftData</div>
+							<div class="skill-pill text-white">CoreData</div>
+							<div class="skill-pill text-white">CloudKit</div>
+							<div class="skill-pill text-white">Tailwind CSS</div>
+							<div class="skill-pill text-white">Astro</div>
+						</div>
+					</div>
+					<div class="skill-box text-white">
+						<div class="skill-header text-white">Developer Tools</div>
+						<div class="skill-pill-container text-white">
+							<div class="text-white skill-pill ">Git</div>
+							<div class="text-white skill-pill">Github</div>
+							<div class="text-white skill-pill">Neo VIM</div>
+							<div class="text-white skill-pill">VSCode</div>
+							<div class="text-white skill-pill">Shell/Bash</div>
+							<div class="text-white skill-pill">Mac</div>
+							<div class="text-white skill-pill">Linux</div>
+							<div class="text-white skill-pill">Windows</div>
+						</div>
+					</div>
+					<div class="text-white skill-box">
+						<div class="text-white skill-header">Other Concepts</div>
+						<div class="text-white skill-pill-container">
+							<div class="text-white skill-pill">Discrete Mathematics</div>
+							<div class="text-white skill-pill">Basic Data Structures</div>
+							<div class="text-white skill-pill">Concurrency</div>
+							<div class="text-white skill-pill">Vector Databases</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="experience" class="section relative w-full h-screen  bg-gray-800 font-ubuntu flex justify-center items-center flex-col gap-10 ">
+				<div class="absolute top-20 sm:top-25 w-3/4 flex flex-row text-white text-xl pointer-events-none">
+					<div>cat experience</div>
+					<div class="blink">_</div>
+				</div>
+				<div class="flex flex-col gap-3 w-3/4 text-white">
+					<div class="text-3xl">Education</div>
+					<div class="glass p-3 flex flex-col">
+						<div class="flex flex-row justify-between items-center text-center flex-wrap">
+							<div class="flex flex-row text-center items-center">
+								<img src="/ncstate_logo_2.png" height="50", width="50">
+								<div class=" text-lg">North Carolina State University</div>
+							</div>
+							<div class="hidden md:flex">Bachelor of Computer Science</div>
+						</div>
+					</div>
+					<div class="glass p-3 flex flex-col">
+						<div class="flex flex-row justify-between items-center text-center flex-wrap">
+							<div class="flex flex-row text-center items-center">
+								<img src="/forsyth_logo.png" height="50", width="50">
+								<div class=" text-lg">Forsyth Techincal Community College</div>
+							</div>
+							<div class="hidden md:flex">Associate of Science</div>
+						</div>
+					</div>
+				</div>
+				<div class="flex flex-col gap-3 w-3/4 text-white">
+					<div class="text-3xl">Work Experience</div>
+					<div class="glass p-3 flex flex-col">
+						<div class="flex flex-row justify-between items-center text-center flex-wrap">
+							<div class="flex flex-row text-center items-center gap-3">
+								<img src="/bad_daddys_logo.png" height="40", width="40">
+								<div class=" text-lg">Bad Daddy's Burger Bar</div>
+							</div>
+							<div class="hidden md:flex">Server</div>
+						</div>
+					</div>
+					<div class="glass p-3 flex flex-col">
+						<div class="flex flex-row justify-between items-center text-center flex-wrap">
+							<div class="flex flex-row text-center items-center pl-2 gap-5">
+								<img src="/walmart_logo.png" height="20", width="20">
+								<div class=" text-lg">Walmart</div>
+							</div>
+							<div class="hidden md:flex">eCommerce Fulfillment Associate (OGP)</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="contact" class="section w-full h-screen relative  bg-gray-800 font-ubuntu flex flex-col justify-center items-center gap-5">
+				<div class="absolute flex flex-row text-white text-xl items-start w-3/4 pb-150 pointer-events-none">
+					<div>ssh contact@huntermansson.com</div>
+					<div class="blink">_</div>
+				</div>
+				<div class="glass flex justify-center items-center flex-col text-white w-3/4 md:w-1/2 p-3 text-center pointer-events-none">
+					I'm always open to new roles, opportunities, and conversations. 
+					Please feel free to reach out for anything. 
+				</div>
+				<div class="pt-3 flex gap-5 justify-center items-center text-lg flex-wrap">
+					<a href="mailto:contact@huntermansson.com" class="text-white transition hover:scale-105 hover:text-blue-400 flex flex-row text-center items-center" aria-label="Opens Email">
+						<i class="fa fa-envelope"></i>
+						<div>&nbsp;contact@huntermansson.com</div>
+					</a>
+					<a href="https://www.linkedin.com/in/hunter-mansson-517159320" class="text-white transition hover:scale-105 hover:text-blue-400 flex flex-row text-center items-center" aria-label="LinkedIn Profile">
+						<i class="fa-brands fa-linkedin"></i>
+						<div>&nbsp;LinkedIn</div>
+					</a>
+					<a href="https://github.com/hrmp-1" class="text-white transition hover:scale-105 hover:text-blue-400 flex flex-row text-center items-center" aria-label="GitHub Profile">
+						<i class="fa-brands fa-github"></i>
+						<div>&nbsp;Github</div>
+					</a>
+					<a href="https://www.instagram.com/huntermansson/" class="text-white transition hover:scale-105 hover:text-blue-400 flex flex-row text-center items-center" aria-label="Instagram Profile">
+						<i class="fa-brands fa-instagram"></i>
+						<div>&nbsp;Instagram</div>
+					</a>
+				</div>
+				<div class="absolute bg-gray-950 bottom-0 w-full p-7 text-gray-400 justify-center items-ceenter text-center font-ubuntu">Built with Astro and Tailwind.</div>
+			</section>
+			
+		</div>
+	</body>
+</html>
+
+<script>
+	setup();
+
+	document.addEventListener('astro:page-load', setup);
+
+	function setup() {
+	const navButtons = document.querySelectorAll('.nav-pill');
+	const sections = document.querySelectorAll('.section');
+	const nav = document.querySelector('nav');
+
+	let currentSection = 'nil';
+
+	const updateNavPosition = () => {
+		if (window.scrollY > 0) {
+			nav?.classList.remove('top-20');
+			nav?.classList.add('top-4');
+		} else {
+			nav?.classList.remove('top-4');
+			nav?.classList.add('top-20');
+		}
+	};
+
+	updateNavPosition();
+
+	window.addEventListener('scroll', () => {
+		updateNavPosition();
+
+		sections.forEach(section => {
+			const htmlElement = section as HTMLElement;
+			if (window.scrollY >= htmlElement.offsetTop) {
+				currentSection = htmlElement.id;
+			}
+
+			if (window.scrollY === 0) {
+				currentSection = 'nil';
+			}
+		});
+
+		navButtons.forEach(button => {
+			const htmlElement = button as HTMLAnchorElement;
+
+			if (htmlElement.href.includes(currentSection)) {
+				htmlElement.classList.add('active')
+			} else {
+				htmlElement.classList.remove('active')
+			}
+		})
+	});
+}
+</script>
