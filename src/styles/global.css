@@ -30,6 +30,10 @@
     animation: blink-animation 1s steps(1, start) infinite;
 }
 
+@utility from-top {
+    @apply top-25 sm:top-25
+}
+
 @keyframes blink-animation {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
