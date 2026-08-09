@@ -1,45 +1,6 @@
 ---
 import ProjectCard from "../components/projectCard.astro";
 
-const projects = [
-    { 
-        name: "Groopd", 
-        language: "swift", 
-        description: `
-            A real-time, shared grocery planner built natively for the Apple ecosystem to 
-            eliminate household purchasing conflicts. Leverages CoreData and CloudKit Zone Sharing 
-            for multi-user synchronization across devices, allowing families and roommates to manage a live, 
-            unified shopping list seamlessly.
-        `, 
-        url: "/projects/groopd",
-        iconurl: "/groopdicon.png",
-        wip: true
-    },
-    { 
-        name: "Notarik", 
-        language: "swift", 
-        description: `
-            A modern speed-reading document reader utilizing the RSVP (Rapid Serial Visual Presentation) technique. 
-            Features asynchronous background PDF processing powered by Swift Concurrency, integrated with CoreData and 
-            CloudKit for cloud sync, with planned AI-driven comprehension tools.
-        `,
-        url: "/projects/notarik",
-        iconurl: "/notarikicon.png",
-        wip: true
-    },
-    { 
-        name: "Portfolio Site", 
-        language: "astro", 
-        description: `
-            A fast, static portfolio built with Astro and Tailwind CSS. Designed with the goal of 
-            being a fast, low cost, and visually pleasing website.
-        `,
-        url: "/projects/portfoliosite",
-        iconurl: "/favicon.png",
-        wip: true
-    }
-]
-
 ---
 <div class="flex flex-col h-1/2 p-5 overflow-hidden glass w-3/4">
     <main class="grow flex flex-col gap-3 pt-3 min-h-0 overflow-hidden">
@@ -79,7 +40,6 @@ const projects = [
             .then((repos) => {
                 for (const repo of repos) {
                     const lang = (repo.language || "other").toLowerCase();
-                    console.log(`Adding repo: ${repo.name}`);
 
                     const valueMap: Record<string, string> = {
                         "java":  "bg-[#E61F25] border-[#E61F25]",
