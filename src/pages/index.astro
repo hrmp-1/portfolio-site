@@ -153,14 +153,14 @@ const ogImage = `${siteUrl}/hunter_final_square.png`;
 					</div>
 				</div>
 			</section>
-			<section id="projects" class="section relative w-full h-screen bg-gray-800 font-ubuntu flex flex-col justify-center items-center gap-3">
+			<section id="projects" class="section relative w-full min-h-screen bg-gray-800 font-ubuntu flex flex-col justify-center items-center gap-3">
 				<div class="flex flex-row text-white text-xl items-start w-3/4 absolute from-top left-1/2 -translate-x-1/2 pointer-events-none" aria-hidden="true">
 					<div>ls projects</div>
 					<div class="blink">_</div>
 				</div>
 				<h2 class="sr-only">Projects by Hunter Mansson</h2>
-				<Projects></Projects>
-				<div class="text-white text-wrap flex flex-wrap">Constantly creating, Constantly updating</div>
+				<Projects class=""></Projects>
+				<div class="text-white text-wrap flex flex-wrap text-sm">Retrieved via Github Public API</div>
 			</section>
 			<section id="skills" class="section relative w-full min-h-screen bg-gray-800 font-ubuntu flex justify-center items-center py-24">
 				<div class="flex flex-row text-white text-xl items-start w-3/4 absolute from-top left-1/2 -translate-x-1/2 pointer-events-none" aria-hidden="true">
@@ -305,47 +305,47 @@ const ogImage = `${siteUrl}/hunter_final_square.png`;
 	document.addEventListener('astro:page-load', setup);
 
 	function setup() {
-	const navButtons = document.querySelectorAll('.nav-pill');
-	const sections = document.querySelectorAll('.section');
-	const nav = document.querySelector('nav');
+		const navButtons = document.querySelectorAll('.nav-pill');
+		const sections = document.querySelectorAll('.section');
+		const nav = document.querySelector('nav');
 
-	let currentSection = 'nil';
+		let currentSection = 'nil';
 
-	const updateNavPosition = () => {
-		if (window.scrollY > 0) {
-			nav?.classList.remove('top-20');
-			nav?.classList.add('top-4');
-		} else {
-			nav?.classList.remove('top-4');
-			nav?.classList.add('top-20');
-		}
-	};
+		const updateNavPosition = () => {
+			if (window.scrollY > 0) {
+				nav?.classList.remove('top-20');
+				nav?.classList.add('top-4');
+			} else {
+				nav?.classList.remove('top-4');
+				nav?.classList.add('top-20');
+			}
+		};
 
-	updateNavPosition();
-
-	window.addEventListener('scroll', () => {
 		updateNavPosition();
 
-		sections.forEach(section => {
-			const htmlElement = section as HTMLElement;
-			if (window.scrollY >= htmlElement.offsetTop) {
-				currentSection = htmlElement.id;
-			}
+		window.addEventListener('scroll', () => {
+			updateNavPosition();
 
-			if (window.scrollY === 0) {
-				currentSection = 'nil';
-			}
+			sections.forEach(section => {
+				const htmlElement = section as HTMLElement;
+				if (window.scrollY >= htmlElement.offsetTop) {
+					currentSection = htmlElement.id;
+				}
+
+				if (window.scrollY === 0) {
+					currentSection = 'nil';
+				}
+			});
+
+			navButtons.forEach(button => {
+				const htmlElement = button as HTMLAnchorElement;
+
+				if (htmlElement.href.includes(currentSection)) {
+					htmlElement.classList.add('active')
+				} else {
+					htmlElement.classList.remove('active')
+				}
+			})
 		});
-
-		navButtons.forEach(button => {
-			const htmlElement = button as HTMLAnchorElement;
-
-			if (htmlElement.href.includes(currentSection)) {
-				htmlElement.classList.add('active')
-			} else {
-				htmlElement.classList.remove('active')
-			}
-		})
-	});
-}
+	}
 </script>
